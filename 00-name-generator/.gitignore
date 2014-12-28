@@ -1,8 +1,5 @@
 # Cobol
 
-# Source files
-*.cbl
-
 # Compiled object files
 *.o
 
