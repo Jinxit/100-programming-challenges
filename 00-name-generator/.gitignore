@@ -1,0 +1,7 @@
+# Cobol
+
+# Compiled object files
+*.o
+
+# Executables
+*.out
