@@ -1,5 +1,7 @@
 program TemperatureConverter;
 
+Label Start;
+
 Function CelciusToFahrenheit(Temperature:Real) : Real;
 Begin
 	CelciusToFahrenheit := Temperature * 1.8 + 32
@@ -15,8 +17,7 @@ Source		: Char;
 Temperature	: Real;
 
 Begin
-
-	writeln('What is the source temperature unit? C/F');
+	Start:writeln('What is the source temperature unit? C/F');
 	readln(Source);	
 	writeln('What is the temperature?');
 	readln(Temperature);
@@ -34,5 +35,10 @@ Begin
 					write(Temperature:1:2);
 					writeln(' degrees Celcius.');
 				End;
+		Else
+		Begin
+			writeln('Invalid input, please try again.');
+			Goto Start;
+		End;
 	End;
 End.
