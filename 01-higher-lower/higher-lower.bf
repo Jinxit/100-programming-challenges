@@ -34,6 +34,11 @@ Down starts the same way as Guess
 >++++++++++
 >>
 
+[
+	FIRST GUESS
+	If it's below 4, say Up, otherwise say Down
+]
+
 Take in input as a single digit; subtract 48 to get it as an integer
 ,------------------------------------------------
 
@@ -42,11 +47,12 @@ Indicator variables are set to 0 and 1
 Subtract at most 4 times
 ++++
 [
-	Subtract from counter and input
-	-<-
+	Subtract from counter
+	-
 	Set indicator to zero
-	>>[-]<<
+	>[-]<
 	If input is not zero
+	<
 	[
 		Start by moving the input to temp
 		->>>>+<<<<
@@ -66,7 +72,9 @@ Subtract at most 4 times
 		-
 	]
 	Move back from temp to indicator
-	>>[-<<+>>]<<<<
+	>>[-<<+>>]<<
+	Go back and decrease input
+	<<-
 	Go forward to counter to keep the loop going
 	>
 ]
