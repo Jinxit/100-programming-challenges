@@ -78,7 +78,7 @@ Subtract at most 4 times
 	Go forward to counter to keep the loop going
 	>
 ]
-First indicator should now be 1 if it's above 4
+First indicator should now be 1 if it's 4 or below
 Print 'Up'
 >[
 	Move back to the word location
