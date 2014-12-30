@@ -42,6 +42,8 @@ Down starts the same way as Guess
 
 Take in input as a single digit; subtract 48 to get it as an integer
 ,------------------------------------------------
+Copy the input for future use
+[->+>>>>>>>+<<<<<<<<]>[-<+>]<
 
 Indicator variables are set to 0 and 1
 >>>+<<
@@ -70,7 +72,7 @@ Subtract at most 4 times
 		Move indicator to temp
 		>>[-]+<<
 		Set indicator to 0
-		-
+		[-]
 	]
 	Move back from temp to indicator
 	>>[-<<+>>]<<
@@ -86,12 +88,12 @@ Print 'Up'
 	<<<<<<<<<<<<
 	Print chain
 	[.>]
-	Set UpInd to 1
-	>>>+<<<
 	Set indicator to 0 again
-	>>>>>>>>>>>>-
+	>>>>>>>>>-
 	Set other indicator to 0 as well
 	>[-]<
+	Set UpInd to 1
+	>>>+<<<
 ]
 Else print 'Down'
 >[
@@ -99,10 +101,10 @@ Else print 'Down'
 	<<<<<<<<<
 	Print chain
 	[.>]
+	Set indicator to 0 again
+	>>>>-
 	Set DnInd to 1
 	>>>+<<<
-	Set indicator to 0 again
-	>>>>>>>>>-
 ]
 
 [
@@ -112,81 +114,45 @@ Else print 'Down'
 ]
 
 Print 'Guess:'
-<<<<<<<<<<<<<<<<<<<<<<<<<<[.>]>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<[.>]>>>>>>>>>>>>>>>>>>
 
 Take in input as a single digit; subtract 48 to get it as an integer
 Double read to get rid of the previous newline; this is an interactive program
->>>>,,------------------------------------------------<<
+,,------------------------------------------------
 
-If we're on the upper half of the range
+Go back and look at UpInd
+<<
+If we're on the lower half of the range
 [
-	Subtract 4 from the input
-	>>----<<
+	Calculate input2 minus input1 minus 1
+	>>>[-<->]<-
+	If that is 1
+	[
+		Change direction; print Down
+		<<<<<<<<<<<<<[.>]>>>>>>>>>>
+		Set it back to 0 to get out of here
+		[-]
+	]
 	Set UpInd to 0
-	-
+	[-]
 ]
-
-Indicator variables are set to 0 and 1
->>>>>+<<
-Subtract at most 2 times
-++
+Else if we're on the lower half of the range
+>
 [
-	Subtract from counter
-	-
-	Set indicator to zero
-	>[-]<
-	If input is not zero
-	<
+	Calculate input1 minus input2 minus 1
+	>[->-<]>-
+	If that is 1
 	[
-		Start by moving the input to temp
-		->>>>+<<<<
-		Set first indicator to 1
-		>>[-]+<<
+		Change direction; print Up
+		<<<<<<<<<<<<<<<<<<[.>]>>>>>>>>>>>>>>>
+		Set it back to 0 to get out of here
+		[-]
 	]
-	Move back from temp to input
-	>>>>[-<<<<+>>>>]<<<<
-	If indicator is 0
-	>>-
-	[
-		Set counter to 0
-		<[-]>
-		Move indicator to temp
-		>>[-]+<<
-		Set indicator to 0
-		-
-	]
-	Move back from temp to indicator
-	>>[-<<+>>]<<
-	Go back and decrease input
-	<<-
-	Go forward to counter to keep the loop going
-	>
+	Set DnInd to 0
+	[-]
 ]
-First indicator should now be 1 if it's 2 or below
-Print 'Up'
->[
-	Move back to the word location
-	<<<<<<<<<<<<
-	Print chain
-	[.>]
-	Set UpInd to 1
-	>>>+<<<
-	Set indicator to 0 again
-	>>>>>>>>>>>>-
-	Set other indicator to 0 as well
-	>[-]<
-]
-Else print 'Down'
->[
-	Move back to the word location
-	<<<<<<<<<
-	Print chain
-	[.>]
-	Set DnInd to 1
-	>>>+<<<
-	Set indicator to 0 again
-	>>>>>>>>>-
-]
+Go forwards to the counter
+>>
 
 [
 	YOU LOSE
@@ -195,8 +161,8 @@ Else print 'Down'
 ]
 
 First character is Y
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-+++++++++
+>>>>++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++
 
 Move it to the other positions; except symbols
 [>+>+>+>>+>+>+>+<<<<<<<<-]
