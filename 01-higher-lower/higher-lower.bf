@@ -129,8 +129,16 @@ If we're on the lower half of the range
 	If that is 1
 	[
 		Change direction; print Down
-		<<<<<<<<<<<<<[.>]>>>>>>>>>>
+		<<<<<<<<<<<<<[.>]>>>>>>>>
 		Set it back to 0 to get out of here
+		[-]
+		If we're here; zero out UpInd early
+		<<[-]>>
+	]
+	Otherwise use UpInd as an indicator that we should print Up again
+	<<
+	[
+		<<<<<<<<<<<<<<<[.>]>>>>>>>>>>>>
 		[-]
 	]
 	Set UpInd to 0
@@ -147,12 +155,18 @@ Else if we're on the lower half of the range
 		<<<<<<<<<<<<<<<<<<[.>]>>>>>>>>>>>>>>>
 		Set it back to 0 to get out of here
 		[-]
+		If we're here; zero out DnInd early
+		<<[-]>>
+	]
+	Otherwise use DnInd as an indicator that we should print Down again
+	<<
+	[
+		<<<<<<<<<<<<[.>]>>>>>>>
+		[-]
 	]
 	Set DnInd to 0
 	[-]
 ]
-Go forwards to the counter
->>
 
 [
 	YOU LOSE
