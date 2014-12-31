@@ -6,3 +6,4 @@
 - Name Generator - COBOL
 - Higher/Lower - brainfuck
 - Temperature Converter - Pascal
+- Age in Seconds - Ada
