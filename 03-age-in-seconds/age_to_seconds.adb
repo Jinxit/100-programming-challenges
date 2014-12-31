@@ -34,8 +34,6 @@ begin
 	Now := Clock;
 	Difference(Now, Birthday, Diff_Days, Diff_Seconds, Diff_LeapSeconds);
 
-	-- This makes some really dumb assumptions like 30 days per month,
-	-- but it's ok for our purposes.
 	Total_Seconds :=  Integer(Diff_Days * 24 * 60 * 60)
 					+ Integer(Diff_Seconds)
 					+ Integer(Diff_LeapSeconds);
