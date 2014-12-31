@@ -1,0 +1,8 @@
+# Ada
+
+# Compiled object files
+*.o
+*.ali
+
+# Executables
+*.out
